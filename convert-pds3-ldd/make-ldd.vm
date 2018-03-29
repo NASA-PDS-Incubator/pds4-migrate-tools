@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model
+   href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1400.sch"
+   schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<Ingest_LDD xmlns="http://pds.nasa.gov/pds4/pds/v1"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="
+      http://pds.nasa.gov/pds4/pds/v1 
+      file:////128.97.68.67/work1/pds4/pds/v1/PDS4_PDS_1400.xsd">
+
+   <name>$config.mission</name>
+   <ldd_version_id>$config.ldd_version</ldd_version_id>
+   <full_name>$config.full_name</full_name>
+   <steward_id>$config.steward</steward_id>
+   <namespace_id>$config.namespace</namespace_id>
+   <last_modification_date_time>$Date.getISO8601DateString($Date.getNow())</last_modification_date_time>
+
+#foreach ($def in $label.ELEMENT_DEFINITION)   
+   <DD_Attribute>
+      <name>$def.NAME.toLowercase.split(":")[1]</name>
+      <version_id>$config.term_version</version_id>
+      <local_identifier>$def.NAME.toLowerCase().replace(":", ".")</local_identifier>
+      <nillable_flag>false</nillable_flag>
+      <submitter_name>$config.submitter</submitter_name>
+      <definition>$def.DESCRIPTION</definition>
+      <DD_Value_Domain>
+         <enumeration_flag>false</enumeration_flag>
+         <value_data_type>$def.GENERAL_DATA_TYPE</value_data_type>
+      </DD_Value_Domain>
+   </DD_Attribute>
+#end
+   <DD_Class>
+      <name>$config.mission</name>
+      <version_id>$config.term_version</version_id>
+      <local_identifier>${config.namespace}.$config.mission</local_identifier>
+      <submitter_name>$config.submitter</submitter_name>
+      <definition>The ${config.mission} class is the container for ${config.mission} mission-specific metadata elements.
+	  </definition>
+
+	  $label.ELEMENT_DEFINITION.getLength();
+	  
+#foreach ($def in $label.ELEMENT_DEFINITION)   
+      <DD_Association>
+         <local_identifier>$def.NAME.toLowerCase().replace(":", ".")</local_identifier>
+         <reference_type>component_of</reference_type>
+         <minimum_occurrences>0</minimum_occurrences>
+         <maximum_occurrences>1</maximum_occurrences>
+      </DD_Association>
+#end
+	</DD_Class>
+
+</Ingest_LDD>
+   

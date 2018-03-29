@@ -1,0 +1,8 @@
+# Configuration file for LDD generation
+submitter=J. Mafi
+full_name=Joseph N. Mafi
+mission=MESSENGER
+ldd_version=1.0.0.0
+term_version=1.0
+steward=ppi
+namespace=mess
