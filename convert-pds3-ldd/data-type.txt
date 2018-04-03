@@ -1,0 +1,6 @@
+#pds3-data-type = pds4-data-type
+ASCII_INTEGER=ASCII_Integer
+INTEGER=ASCII_Integer
+ASCII_REAL=ASCII_Real
+REAL=ASCII_Real
+CHARACTER=ASCII_String

@@ -4,12 +4,13 @@
 
 A set of scripts and templates to convert a PDS3 dictionary to a PDS4 LDD.
 
-File         | Purpose
------------- + ---------------------
-config.txt   | Sample configuration file used with docgen to create the PDS4 LDD
-make-ldd.sh  | Script to run [docgen](http://release.igpp.ucla.edu/igpp/docgen/) with the necessary options.
-make-ldd.vm  | Velocity template for generating the PDS4 LDD
-merge-cat.sh | Script to combine multiple PDS4 CAT dictionary files into a single file.
+File          | Purpose
+------------- + ---------------------
+config.txt    | Sample configuration file used with docgen to create the PDS4 LDD
+data-type.txt | Definitions for conversion from PDS3 data types to PDS4 data types.
+make-ldd.sh   | Script to run [docgen](http://release.igpp.ucla.edu/igpp/docgen/) with the necessary options.
+make-ldd.vm   | Velocity template for generating the PDS4 LDD
+merge-cat.sh  | Script to combine multiple PDS4 CAT dictionary files into a single file.
 
 Steps to convert a PDS3 dictionary to PDS4 LDD
 

@@ -18,15 +18,28 @@
 
 #foreach ($def in $label.ELEMENT_DEFINITION)   
    <DD_Attribute>
-      <name>$def.NAME.toLowercase.split(":")[1]</name>
+      <name>$Text.toLowerCase($def.NAME).split(":")[1]</name>
       <version_id>$config.term_version</version_id>
-      <local_identifier>$def.NAME.toLowerCase().replace(":", ".")</local_identifier>
+      <local_identifier>$Text.toLowerCase($def.NAME).replace(":", ".")</local_identifier>
       <nillable_flag>false</nillable_flag>
       <submitter_name>$config.submitter</submitter_name>
       <definition>$def.DESCRIPTION</definition>
       <DD_Value_Domain>
+#if($def.STANDARD_VALUE_SET != "N/A")
+         <enumeration_flag>true</enumeration_flag>
+         <value_data_type>$convert.get($def.GENERAL_DATA_TYPE)</value_data_type>
+#foreach ( $val in $def.STANDARD_VALUE_SET)
+		 <DD_Permissible_Value>
+			<value>$val</value>
+			<value_meaning></value_meaning>
+		 </DD_Permissible_Value>
+#end
+#else
          <enumeration_flag>false</enumeration_flag>
-         <value_data_type>$def.GENERAL_DATA_TYPE</value_data_type>
+         <value_data_type>$convert.get($def.GENERAL_DATA_TYPE)</value_data_type>
+		 <minimum_value>$def.MINIMUM</minimum_value>
+		 <maximum_value>$def.MAXIMUM</maximum_value>
+#end		
       </DD_Value_Domain>
    </DD_Attribute>
 #end
@@ -42,8 +55,8 @@
 	  
 #foreach ($def in $label.ELEMENT_DEFINITION)   
       <DD_Association>
-         <local_identifier>$def.NAME.toLowerCase().replace(":", ".")</local_identifier>
-         <reference_type>component_of</reference_type>
+         <local_identifier>$Text.toLowerCase($def.NAME).replace(":", ".")</local_identifier>
+         <reference_type>attribute_of</reference_type>
          <minimum_occurrences>0</minimum_occurrences>
          <maximum_occurrences>1</maximum_occurrences>
       </DD_Association>
