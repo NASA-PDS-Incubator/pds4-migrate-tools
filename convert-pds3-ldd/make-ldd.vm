@@ -87,7 +87,6 @@
 	<!-- Specific Attributes -->
 #foreach ($def in $label.ELEMENT_DEFINITION)   
 	<DD_Attribute>
-		<object_name>$def.OBJECT_NAME</object_name>
 		<name>$Text.toLowerCase($def.ELEMENT_NAME).split(":")[1]</name>
 		<version_id>$config.term_version</version_id>
 		<local_identifier>$Text.toLowerCase($def.ELEMENT_NAME).replace(":", ".")</local_identifier>

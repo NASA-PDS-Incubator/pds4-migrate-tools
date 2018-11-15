@@ -10,7 +10,7 @@ echo "PDS_VERSION_ID                   = PDS3" > $OUTCAT
 
 for i in $INCAT; do
 	echo file: $i
-	grep -v -e "^PDS_VERSION_ID" -e "LABEL_REVISION_NOTE" -e "^END$" -e "^/\*" $i >> $OUTCAT
+	grep -h -v -e "^PDS_VERSION_ID" -e "LABEL_REVISION_NOTE" -e "^END$" -e "^/\*" $i >> $OUTCAT
 done
 
 echo "END" >> $OUTCAT
