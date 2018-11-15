@@ -1,0 +1,2560 @@
+PDS_VERSION_ID                   = PDS3
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:CALLAMP_DELAY_TIME"
+   BL_NAME                       = DAWN_CALLAMP_DELAY_TIME
+   DESCRIPTION                   = "Callamp switch on delay measured in
+                                    microseconds after START_TIME.
+                                    
+                                    Callamp can be switched on before 
+                                    (< 193000 µs), at (= 193000 µs), or after
+                                    (> 193000 µs) begin of exposure.
+                                    "
+   GENERAL_DATA_TYPE             = ASCII_INTEGER
+   MAXIMUM                       = 10000000
+   MINIMUM                       = 0
+   MAXIMUM_LENGTH                = 8
+   MINIMUM_LENGTH                = 1
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = µs
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:CALLAMP_DUTY"
+   BL_NAME                       = DAWN_CALLAMP_DUTY
+   DESCRIPTION                   = "The callamp can be run at various
+                                    duty cycles between 0.0 % and 100.0 % by
+                                    using only every other pulse of the callamp
+                                    frequency to trigger the callamp. 
+                                                                        
+                                    DAWN_CALLAMP_DUTY = CALLAMP_FREQUENCY
+                                                        / Value * 100 %
+                                    
+                                    Example:
+                                    Value = 1.0 : DAWN_CALLAMP_DUTY = 100 %
+                                    Value = 2.5 : DAWN_CALLAMP_DUTY = 40 %
+                                    
+                                    This calculation is done internally in the
+                                    camera, the user  commands the requensted
+                                    duty cycle in percentage."
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 100.0
+   MINIMUM                       = 0.0
+   MAXIMUM_LENGTH                = 5
+   MINIMUM_LENGTH                = 3
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = PERCENT
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:CALLAMP_ENABLE_FLAG"
+   BL_NAME                       = DAWN_CALLAMP_ENABLE_FLAG
+   DESCRIPTION                   = "OFF = callamp set to disabled
+                                    
+                                    ON = callamp set to enabled"
+   GENERAL_DATA_TYPE             = ALPHABET
+   MAXIMUM                       = "N/A"
+   MINIMUM                       = "N/A"
+   MAXIMUM_LENGTH                = 3
+   MINIMUM_LENGTH                = 2
+   STANDARD_VALUE_TYPE           = DEFINITION
+   STANDARD_VALUE_SET            = {"OFF","ON"}
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = "N/A"
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:CALLAMP_FREQUENCY"
+   BL_NAME                       = DAWN_CALLAMP_FREQUENCY
+   DESCRIPTION                   = "The callamp frequency is determined by the 
+                                    internal 24 MHz clock and an integer
+                                    divisor.                                     
+                                     
+                                    CALLAMP_FREQUENCY = 24 MHz / Value
+                                    
+                                    The standard callamp frequency is 100 kHz
+                                    (24MHz / 240)."
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 250.0
+   MINIMUM                       = 0.0
+   MAXIMUM_LENGTH                = 8
+   MINIMUM_LENGTH                = 3
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = kHz
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:CALLAMP_STROBE_TIME"
+   BL_NAME                       = DAWN_CALLAMP_STROBE_TIME
+   DESCRIPTION                   = "Callamp strobe time is measured in 
+                                    microseconds after callamp switch on.
+                                    
+                                    callamp switch off time =
+                                    START_TIME +
+                                    DAWN_CALLAMP_DELAY_TIME +
+                                    DAWN_CALLAMP_STROBE_TIME"
+   GENERAL_DATA_TYPE             = ASCII_INTEGER
+   MAXIMUM                       = 10000000
+   MINIMUM                       = 0
+   MAXIMUM_LENGTH                = 8
+   MINIMUM_LENGTH                = 1
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = µs
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:CHAMBER"
+   BL_NAME                       = DAWN_CHAMBER
+   DESCRIPTION                   = "This keyword was used during ground tests to 
+                                    describe the test environment."
+   GENERAL_DATA_TYPE             = ALPHABET
+   MAXIMUM                       = "N/A"
+   MINIMUM                       = "N/A"
+   MAXIMUM_LENGTH                = "N/A"
+   MINIMUM_LENGTH                = "N/A"
+   STANDARD_VALUE_TYPE           = TEXT
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = "N/A"
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-05
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:DATA_ROUTING_ID"
+   BL_NAME                       = DAWN_DATA_ROUTING_ID
+   DESCRIPTION                   = "This keyword describes the priority of the
+                                    acquired image and thus how it was handled
+                                    on board.
+      
+                                    Op-Nav = The image is processed with highest
+                                    priority and streamed into VR10 of the s/c.
+
+                                    Science 1 = The image is processed with high
+                                    priority and streamed into VR8 of the s/c.
+                                    
+                                    Science 2 = The image is processed with mid
+                                    priority and streamed into VR8 of the s/c.
+
+                                    Science 3 = The image is processed with low
+                                    priority and streamed into VR8 of the s/c.
+                                    
+                                    Science 4 = The image is processed with
+                                    least priority and streamed into VR8 of the
+                                    s/c.
+"
+   GENERAL_DATA_TYPE             = ALPHABET
+   MAXIMUM                       = "N/A"
+   MINIMUM                       = "N/A"
+   MAXIMUM_LENGTH                = 9
+   MINIMUM_LENGTH                = 6
+   STANDARD_VALUE_TYPE           = DEFINITION
+   STANDARD_VALUE_SET            = {"Op-Nav","Science 1","Science 1","Science 1",
+                                    "Science 1"}
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = "N/A"
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-05
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:DPU_HARDWARE_ID"
+   BL_NAME                       = DAWN_DPU_HARDWARE_ID
+   DESCRIPTION                   = "Both DPUs for FC1 and FC2 have the same
+                                    DPU ID because they are identical."
+   GENERAL_DATA_TYPE             = ALPHABET
+   MAXIMUM                       = "N/A"
+   MINIMUM                       = "N/A" 
+   MAXIMUM_LENGTH                = 4
+   MINIMUM_LENGTH                = 4
+   STANDARD_VALUE_TYPE           = DEFINITION
+   STANDARD_VALUE_SET            = {"1.04"}
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = "N/A"
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-05
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:DPU_SOFTWARE_VERSION"
+   BL_NAME                       = DAWN_DPU_SOFTWARE_VERSION
+   DESCRIPTION                   = "Current version of the FC onboard software"
+   GENERAL_DATA_TYPE             = ALPHABET
+   MAXIMUM                       = "N/A"
+   MINIMUM                       = "N/A" 
+   MAXIMUM_LENGTH                = 4
+   MINIMUM_LENGTH                = 4
+   STANDARD_VALUE_TYPE           = TEXT
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = "N/A"
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-05
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:FEE_FLAG"
+   BL_NAME                       = DAWN_FEE_FLAG
+   DESCRIPTION                   = "OFF = FEE is disabled, images cannot be
+                                    acquired
+                                    
+                                    ON = FEE is enabled, images can be acquired"
+   GENERAL_DATA_TYPE             = ALPHABET
+   MAXIMUM                       = "N/A"
+   MINIMUM                       = "N/A"
+   MAXIMUM_LENGTH                = 3
+   MINIMUM_LENGTH                = 2
+   STANDARD_VALUE_TYPE           = DEFINITION
+   STANDARD_VALUE_SET            = {"OFF","ON"}
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = "N/A"
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:FEE_HARDWARE_ID"
+   BL_NAME                       = DAWN_FEE_HARDWARE_ID
+   DESCRIPTION                   = "017.10.10 = FEE ID of FC1 (FS1) 
+  
+                                   017.09.09 = FEE ID of FC2 (FM2)
+                                   
+                                   063.15.15 indicates that the FEE is off or
+                                   busy and cannot transmit its ID."
+   GENERAL_DATA_TYPE             = ALPHABET
+   MAXIMUM                       = "N/A"
+   MINIMUM                       = "N/A" 
+   MAXIMUM_LENGTH                = 9
+   MINIMUM_LENGTH                = 9
+   STANDARD_VALUE_TYPE           = DEFINITION
+   STANDARD_VALUE_SET            = {"017.09.09","017.10.10" }
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = "N/A"
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-05
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:FILTER_ENCODER"
+   BL_NAME                       = DAWN_FILTER_ENCODER 
+   DESCRIPTION                   = "FILTER_NUMBER =
+                                    (((64 + 4 + encoderOnClearFilter
+                                    - FILTER_ENCODER) / 8) MOD 8) + 1
+                                    
+                                    encoderOnClearFilter is a hardware-dependent
+                                    constant filterEncoder is the current
+                                    readout of the encoder filterNumber
+                                    return a value in the range [1..8].
+                                    
+                                    All the operation are integer operations,
+                                    MOD represents modulo and / is the integer
+                                    division. The subtraction is negative
+                                    (F1 - Fx) because the encoder value
+                                    decreases with increasing filter number."
+   GENERAL_DATA_TYPE             = ASCII_INTEGER
+   MAXIMUM                       = 63
+   MINIMUM                       = 0
+   MAXIMUM_LENGTH                = 2
+   MINIMUM_LENGTH                = 0
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = K
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-05
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:FRONT_DOOD_STATUS_ID"
+   BL_NAME                       = DAWN_FRONT_DOOD_STATUS_ID
+   DESCRIPTION                   = "CLOSED = Front Door, covering the aperture,
+                                    is closed.
+                                    
+                                    DOOR = Front Door is open."
+   GENERAL_DATA_TYPE             = ALPHABET
+   MAXIMUM                       = "N/A"
+   MINIMUM                       = "N/A"
+   MAXIMUM_LENGTH                = 6
+   MINIMUM_LENGTH                = 4
+   STANDARD_VALUE_TYPE           = DEFINITION
+   STANDARD_VALUE_SET            = {"CLOSED","OPEN"}
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = "N/A"
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-05
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:FRONT_DOOR_ENCODER"
+   BL_NAME                       = DAWN_FRONT_DOOR_ENCODER 
+   DESCRIPTION                   = "The Front Door is closed if
+                                    FRONT_DOOR_ENCODER shows the nominal value
+                                    +/- 1 and otherwise is open."
+   GENERAL_DATA_TYPE             = ASCII_INTEGER
+   MAXIMUM                       = 63
+   MINIMUM                       = 0
+   MAXIMUM_LENGTH                = 2
+   MINIMUM_LENGTH                = 0
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = K
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-05
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:FSA_SHOOT_ENABLE_FLAG"
+   BL_NAME                       = DAWN_FSA_SHOOT_ENABLE_FLAG
+   DESCRIPTION                   = "Fail Safe Actuator:
+                                    OFF = The Fail Safe Actuator for the
+                                    Front Door is disabled.
+                                                                        
+                                    ON = The Fail Safe Actuator for the
+                                    Front Door is enabled. FSA_SHOOT_FLAG can be
+                                    switched ON now."
+   GENERAL_DATA_TYPE             = ALPHABET
+   MAXIMUM                       = "N/A"
+   MINIMUM                       = "N/A"
+   MAXIMUM_LENGTH                = 3
+   MINIMUM_LENGTH                = 2
+   STANDARD_VALUE_TYPE           = DEFINITION
+   STANDARD_VALUE_SET            = {"OFF","ON"}
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = "N/A"
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-05
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:FSA_SHOOT_FLAG"
+   BL_NAME                       = DAWN_FSA_SHOOT_FLAG
+   DESCRIPTION                   = "Fail Safe Actuator:
+                                    OFF = The Fail Safe Actuator for the
+                                    Front Door is switched off.
+                                                                        
+                                    ON = The Fail Safe Actuator for the
+                                    Front Door is switched on."
+   GENERAL_DATA_TYPE             = ALPHABET
+   MAXIMUM                       = "N/A"
+   MINIMUM                       = "N/A"
+   MAXIMUM_LENGTH                = 3
+   MINIMUM_LENGTH                = 2
+   STANDARD_VALUE_TYPE           = DEFINITION
+   STANDARD_VALUE_SET            = {"OFF","ON"}
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = "N/A"
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-05
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:HEATER0_FLAG"
+   BL_NAME                       = DAWN_HEATER0_FLAG
+   DESCRIPTION                   = "Camera Head Heater:
+                                    OFF = The CH heater (HEATER0) is
+                                    switched on. 
+                                    
+                                    ON = The CH heater (HEATER0) is
+                                    switched off.
+                                    
+                                    The heater produces 4.4 W (5.6 Ohm at +5 V)"
+   GENERAL_DATA_TYPE             = ALPHABET
+   MAXIMUM                       = "N/A"
+   MINIMUM                       = "N/A"
+   MAXIMUM_LENGTH                = 3
+   MINIMUM_LENGTH                = 2
+   STANDARD_VALUE_TYPE           = DEFINITION
+   STANDARD_VALUE_SET            = {"OFF","ON"}
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = "N/A"
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-05
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:HEATER1_FLAG"
+   BL_NAME                       = DAWN_HEATER1_FLAG
+   DESCRIPTION                   = "Baffle Heater:
+                                    OFF = The Baffle heater (HEATER1) is
+                                    switched on. 
+                                    
+                                    ON = The Baffle heater (HEATER1) is
+                                    switched off.
+                                    
+                                    The heater produces 1.0 W (26 Ohm at +5 V)"
+   GENERAL_DATA_TYPE             = ALPHABET
+   MAXIMUM                       = "N/A"
+   MINIMUM                       = "N/A"
+   MAXIMUM_LENGTH                = 3
+   MINIMUM_LENGTH                = 2
+   STANDARD_VALUE_TYPE           = DEFINITION
+   STANDARD_VALUE_SET            = {"OFF","ON"}
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = "N/A"
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-05
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:IMAGE_ACQUIRE_MODE"
+   BL_NAME                       = DAWN_IMAGE_ACQUIRE_MODE
+   DESCRIPTION                   = "This keyword describes the mode of image
+                                    acquisition.
+      
+                                    NORMAL = The image was acquired with Front
+                                    Door open.
+
+                                    DARK = The image was acquired with
+                                    Front Door closed and the Callamp off.
+                                    
+                                    FLATFIELD = The image was acquired with
+                                    Front Door closed and the Callamp on.
+
+                                    STORAGE = The image shows the readout of the
+                                    storage area of the CCD.
+                                    
+                                    SERIAL = The artificial image shows the
+                                    readout of the serial register. 
+                                    
+                                    TEST_CH = The artificial iamge shows a test
+                                    pattern with DNs from 0 to 16382."
+   GENERAL_DATA_TYPE             = ALPHABET
+   MAXIMUM                       = "N/A"
+   MINIMUM                       = "N/A"
+   MAXIMUM_LENGTH                = 9
+   MINIMUM_LENGTH                = 4
+   STANDARD_VALUE_TYPE           = DEFINITION
+   STANDARD_VALUE_SET            = {"NORMAL","DARK","FLATFIELD","STORAGE",
+                                    "SERIAL","TEST_CH"}
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = "N/A"
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-05
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:I_12"
+   BL_NAME                       = DAWN_I_12
+   DESCRIPTION                   = "Name: C12FEE
+                                   Location: PCU
+                                   H/K Sensor: PCU Current Monitor
+                                   Sensor Type: Current Sensor
+                                   Gain: 0.02
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   I_12 = DN * Gain + Offset + Sensor Offset
+                                              [mA]
+                                  
+                                   Lower limit red: 50 mA
+                                   Lower limit yellow: 60 mA
+                                   Upper limit yellow: 100 mA
+                                   Upper limit red: 200 mA"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 9999.999
+   MINIMUM                       = -9999.999
+   MAXIMUM_LENGTH                = 9
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = mA
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:I_16"
+   BL_NAME                       = DAWN_I_16
+   DESCRIPTION                   = "Name: C16V15
+                                   Location: PCU
+                                   H/K Sensor: PCU Current Monitor
+                                   Sensor Type: Current Sensor
+                                   Gain: 0.009
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   I_16 = DN * Gain + Offset + Sensor Offset
+                                              [mA]
+                                  
+                                   Lower limit red: 20 mA
+                                   Lower limit yellow: 30 mA
+                                   Upper limit yellow: 60 mA
+                                   Upper limit red: 100 mA"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 9999.999
+   MINIMUM                       = -9999.999
+   MAXIMUM_LENGTH                = 9
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = mA
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:I_28"
+   BL_NAME                       = DAWN_I_28
+   DESCRIPTION                   = "Name: C28M
+                                   Location: PCU
+                                   H/K Sensor: MAIN +28V Current Monitor
+                                   Sensor Type: Current Sensor
+                                   Gain: 0.0016
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   I_28 = DN * Gain + Offset + Sensor Offset
+                                              [mA]
+                                  
+                                   Lower limit red: 200 mA
+                                   Lower limit yellow: 250 mA
+                                   Upper limit yellow: 1200 mA
+                                   Upper limit red: 1400 mA"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 9999.999
+   MINIMUM                       = -9999.999
+   MAXIMUM_LENGTH                = 9
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = mA
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:I_2_5"
+   BL_NAME                       = DAWN_I_2_5
+   DESCRIPTION                   = "Name: C2.5AN
+                                   Location: PCU
+                                   H/K Sensor: PCU Current Monitor
+                                   Sensor Type: Current Sensor
+                                   Gain: 0.15
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   I_2_5 = DN * Gain + Offset + Sensor Offset
+                                              [mA]
+                                  
+                                   Lower limit red: 250 mA
+                                   Lower limit yellow: 300 mA
+                                   Upper limit yellow: 900 mA
+                                   Upper limit red: 1000 mA"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 9999.999
+   MINIMUM                       = -9999.999
+   MAXIMUM_LENGTH                = 9
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = mA
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:I_3_3"
+   BL_NAME                       = DAWN_I_3_3
+   DESCRIPTION                   = "Name: C3.3AN
+                                   Location: PCU
+                                   H/K Sensor: PCU Current Monitor
+                                   Sensor Type: Current Sensor
+                                   Gain: 0.15
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   I_3_3 = DN * Gain + Offset + Sensor Offset
+                                              [mA]
+                                  
+                                   Lower limit red: 100 mA
+                                   Lower limit yellow: 170 mA
+                                   Upper limit yellow: 850 mA
+                                   Upper limit red: 1400 mA"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 9999.999
+   MINIMUM                       = -9999.999
+   MAXIMUM_LENGTH                = 9
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = mA
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:I_5"
+   BL_NAME                       = DAWN_I_5
+   DESCRIPTION                   = "Name: C5FEE
+                                   Location: PCU
+                                   H/K Sensor: PCU Current Monitor
+                                   Sensor Type: Current Sensor
+                                   Gain: 0.05
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   I_2_5 = DN * Gain + Offset + Sensor Offset
+                                              [mA]
+                                  
+                                   Lower limit red: 100 mA
+                                   Lower limit yellow: 250 mA
+                                   Upper limit yellow: 350 mA
+                                   Upper limit red: 400 mA"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 9999.999
+   MINIMUM                       = -9999.999
+   MAXIMUM_LENGTH                = 9
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = mA
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:I_5_ANALOG"
+   BL_NAME                       = DAWN_I_5_ANALOG
+   DESCRIPTION                   = "Name: C5AN
+                                   Location: PCU
+                                   H/K Sensor: PCU Current Monitor
+                                   Sensor Type: Current Sensor
+                                   Gain: 0.2
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   I_5_ANALOG = DN * Gain + Offset + Sensor Offset
+                                              [mA]
+                                  
+                                   Lower limit red: 75 mA
+                                   Lower limit yellow: 100 mA
+                                   Upper limit yellow: 1150 mA
+                                   Upper limit red: 1300 mA"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 9999.999
+   MINIMUM                       = -9999.999
+   MAXIMUM_LENGTH                = 9
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = mA
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:I_M5"
+   BL_NAME                       = DAWN_I_M5
+   DESCRIPTION                   = "Name: C-5FEE
+                                   Location: PCU
+                                   H/K Sensor: PCU Current Monitor
+                                   Sensor Type: Current Sensor
+                                   Gain: -0.015
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   I_M5 = DN * Gain + Offset + Sensor Offset
+                                              [mA]
+                                  
+                                   Lower limit red: -200 mA
+                                   Lower limit yellow: -120 mA
+                                   Upper limit yellow: -60 mA
+                                   Upper limit red: -30 mA"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 9999.999
+   MINIMUM                       = -9999.999
+   MAXIMUM_LENGTH                = 9
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = mA
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:I_M5_ANALOG"
+   BL_NAME                       = DAWN_I_M5_ANALOG
+   DESCRIPTION                   = "Name: C-5AN
+                                   Location: PCU
+                                   H/K Sensor: PCU Current Monitor
+                                   Sensor Type: Current Sensor
+                                   Gain: -0.015
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   I_M5_ANALOG = DN * Gain + Offset + Sensor Offset
+                                              [mA]
+                                  
+                                   Lower limit red: -100 mA
+                                   Lower limit yellow: -60 mA
+                                   Upper limit yellow: -20 mA
+                                   Upper limit red: -10 mA"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 9999.999
+   MINIMUM                       = -9999.999
+   MAXIMUM_LENGTH                = 9
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = mA
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:MCU_FLAG"
+   BL_NAME                       = DAWN_MCU_FLAG
+   DESCRIPTION                   = "OFF = MCU is disabled, mechanisms cannot
+                                    be moved
+                                    
+                                    ON = MCU is enabled, mechanisms (filterwheel  
+                                    and front door) can be moved" 
+   GENERAL_DATA_TYPE             = ALPHABET
+   MAXIMUM                       = "N/A"
+   MINIMUM                       = "N/A"
+   MAXIMUM_LENGTH                = 3
+   MINIMUM_LENGTH                = 2
+   STANDARD_VALUE_TYPE           = DEFINITION
+   STANDARD_VALUE_SET            = {"OFF","ON"}
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = "N/A"
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:MCU_HARDWARE_ID"
+   BL_NAME                       = DAWN_MCU_HARDWARE_ID
+   DESCRIPTION                   = "10 = MCU ID of FC1 (FS1) 
+  
+                                   12 = MCU ID of FC2 (FM2)"
+   GENERAL_DATA_TYPE             = ALPHABET
+   MAXIMUM                       = "N/A"
+   MINIMUM                       = "N/A" 
+   MAXIMUM_LENGTH                = 2
+   MINIMUM_LENGTH                = 2
+   STANDARD_VALUE_TYPE           = DEFINITION
+   STANDARD_VALUE_SET            = {"10","12"}
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = "N/A"
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-05
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:MCU_MOTOR_FLAG"
+   BL_NAME                       = DAWN_MCU_MOTOR_FLAG
+   DESCRIPTION                   = "OFF = Both motors (Front Door and
+                                          Filterwheel) are unpowered.
+                                          
+                                    ON = Both motors are powered. Either to hold
+                                         their position or to move to another
+                                         position.  
+                                    "
+   GENERAL_DATA_TYPE             = ALPHABET
+   MAXIMUM                       = "N/A"
+   MINIMUM                       = "N/A"
+   MAXIMUM_LENGTH                = 3
+   MINIMUM_LENGTH                = 2
+   STANDARD_VALUE_TYPE           = DEFINITION
+   STANDARD_VALUE_SET            = {"OFF","ON"}
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = "N/A"
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-05
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:OPERATOR"
+   BL_NAME                       = DAWN_OPERATOR
+   DESCRIPTION                   = "This keyword was used during ground tests to 
+                                    indicate the responsible operator of the
+                                    test."
+   GENERAL_DATA_TYPE             = ALPHABET
+   MAXIMUM                       = "N/A"
+   MINIMUM                       = "N/A"
+   MAXIMUM_LENGTH                = "N/A"
+   MINIMUM_LENGTH                = "N/A"
+   STANDARD_VALUE_TYPE           = TEXT
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = "N/A"
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-05
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:PCU_HARDWARE_ID"
+   BL_NAME                       = DAWN_PCU_HARDWARE_ID
+   DESCRIPTION                   = "3.05 = PCU ID of FC1 (FS1) 
+  
+                                   2.04 = PCU ID of FC2 (FM2)"
+   GENERAL_DATA_TYPE             = ALPHABET
+   MAXIMUM                       = "N/A"
+   MINIMUM                       = "N/A" 
+   MAXIMUM_LENGTH                = 4
+   MINIMUM_LENGTH                = 4
+   STANDARD_VALUE_TYPE           = DEFINITION
+   STANDARD_VALUE_SET            = {"2.04","3.05" }
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = "N/A"
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-05
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:PURPOSE"
+   BL_NAME                       = DAWN_PURPOSE
+   DESCRIPTION                   = "This keyword was used during ground tests to 
+                                    describe the purpose of the test."
+   GENERAL_DATA_TYPE             = ALPHABET
+   MAXIMUM                       = "N/A"
+   MINIMUM                       = "N/A"
+   MAXIMUM_LENGTH                = "N/A"
+   MINIMUM_LENGTH                = "N/A"
+   STANDARD_VALUE_TYPE           = TEXT
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = "N/A"
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-05
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:SUBJECT"
+   BL_NAME                       = DAWN_SUBJECT
+   DESCRIPTION                   = "This keyword was used during ground tests to 
+                                    describe the subject used during the test."
+   GENERAL_DATA_TYPE             = ALPHABET
+   MAXIMUM                       = "N/A"
+   MINIMUM                       = "N/A"
+   MAXIMUM_LENGTH                = "N/A"
+   MINIMUM_LENGTH                = "N/A"
+   STANDARD_VALUE_TYPE           = TEXT
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = "N/A"
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-05
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:TARGET"
+   BL_NAME                       = DAWN_TARGET
+   DESCRIPTION                   = "This keyword was used during ground tests to 
+                                    describe the target the FC was pointing at
+                                    during the test"
+   GENERAL_DATA_TYPE             = ALPHABET
+   MAXIMUM                       = "N/A"
+   MINIMUM                       = "N/A"
+   MAXIMUM_LENGTH                = "N/A"
+   MINIMUM_LENGTH                = "N/A"
+   STANDARD_VALUE_TYPE           = TEXT
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = "N/A"
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-05
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:TEST_LAMP"
+   BL_NAME                       = DAWN_TEST_LAMP
+   DESCRIPTION                   = "This keyword was used during ground tests to 
+                                    define the lamp that was used during the
+                                    test."
+   GENERAL_DATA_TYPE             = ALPHABET
+   MAXIMUM                       = "N/A"
+   MINIMUM                       = "N/A"
+   MAXIMUM_LENGTH                = "N/A"
+   MINIMUM_LENGTH                = "N/A"
+   STANDARD_VALUE_TYPE           = TEXT
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = "N/A"
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-05
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:T_BAFFLE"
+   BL_NAME                       = DAWN_T_BAFFLE
+   DESCRIPTION                   = "Name: TBF
+                                   Location: Baffle
+                                   H/K Sensor: Baffle Thermistor
+                                   Sensor Type: AD590
+                                   Gain: 0.9975
+                                   Offset: -129.5
+                                   Sensor Offset FC1: -2.1 
+                                   Sensor Offset FC2: -3.1
+
+                                   T_BAFFLE = DN * Gain + Offset + Sensor Offset
+                                              + 273.150 [deg C]
+                                   T_BAFFLE = DN * Gain + Offset + Sensor Offset
+                                              [Kelvin]
+                                  
+                                   Lower limit red: -55.0 deg C
+                                   Lower limit yellow: -50.0 deg C
+                                   Upper limit yellow: +40.0 deg C
+                                   Upper limit red: +45.0 deg C"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 999.999
+   MINIMUM                       = -999.999
+   MAXIMUM_LENGTH                = 8
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = K
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:T_CCD"
+   BL_NAME                       = DAWN_T_CCD 
+   DESCRIPTION                   = "Name: HK-Tccd
+                                   Location: DPU
+                                   H/K Sensor: FEE CCD Thermistor
+                                   Sensor Type: AD590
+                                   Gain: 0.0373
+                                   Offset: -273
+                                   Sensor Offset FC1: -5.240
+                                   Sensor Offset FC2: -3.960
+                                   
+                                   T_CCD = DN * Gain + Offset + Sensor Offset
+                                              [deg C]
+                                   T_CCD = DN * Gain + Offset + Sensor Offset
+                                              + 273.150 [Kelvin]
+                                   
+                                   The CCD is passively cooled, the CCD-heaters
+                                   are for non-operation mode only.
+                                   
+                                   Lower limit red: -95.0 deg C
+                                   Lower limit yellow: -75.0 deg C
+                                   Upper limit yellow: +35.0 deg C
+                                   Upper limit red: +40.0 deg C"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 999.999
+   MINIMUM                       = -999.999
+   MAXIMUM_LENGTH                = 8
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = K
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:T_COVER_MOTOR"
+   BL_NAME                       = DAWN_T_COVER_MOTOR
+   DESCRIPTION                   = "Name: TCM
+                                   Location: Front Door
+                                   H/K Sensor: FD Motor Thermistor
+                                   Sensor Type: AD590
+                                   Gain: 0.9975
+                                   Offset: -129.5
+                                   Sensor Offset FC1: -2.1 
+                                   Sensor Offset FC2: -1.1
+                                   
+                                   T_COVER_MOTOR = DN * Gain + Offset
+                                   + Sensor Offset [deg C]
+                                   T_COVER_MOTOR = DN * Gain + Offset
+                                   + Sensor Offset + 273.150 [Kelvin]
+                                   
+                                   Lower limit red: -55.0 deg C
+                                   Lower limit yellow: -50.0 deg C
+                                   Upper limit yellow: +50.0 deg C
+                                   Upper limit red: +60.0 deg C"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 999.999
+   MINIMUM                       = -999.999
+   MAXIMUM_LENGTH                = 8
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = K
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:T_CSC"
+   BL_NAME                       = DAWN_T_CSC
+   DESCRIPTION                   = "Name: HK-Tpcu3
+                                   Location: PCU
+                                   H/K Sensor: PCU Board Thermistor 1
+                                   (PCU Center Screw Thermistor)
+                                   Sensor Type: AD590
+                                   Gain: 0.0373
+                                   Offset: -273
+                                   Sensor Offset FC1: -3.210
+                                   Sensor Offset FC2: -3.210
+                                   
+                                   T_CSC = DN * Gain + Offset + Sensor Offset
+                                              [deg C]
+                                   T_CSC = DN * Gain + Offset + Sensor Offset
+                                              + 273.150 [Kelvin]
+                                   
+                                   The CCD is passively cooled, the CCD-heaters
+                                   are for non-operation mode only.
+                                   
+                                   Lower limit red: -40.0 deg C
+                                   Lower limit yellow: -35.0 deg C
+                                   Upper limit yellow: +70.0 deg C
+                                   Upper limit red: +80.0 deg C"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 999.999
+   MINIMUM                       = -999.999
+   MAXIMUM_LENGTH                = 8
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = K
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:T_DCDC"
+   BL_NAME                       = DAWN_T_DCDC
+   DESCRIPTION                   = "Name: HK-Tpcu1
+                                   Location: PCU
+                                   H/K Sensor: PCU Converter Board Thermistor
+                                   Sensor Type: AD590
+                                   Gain: 0.0373
+                                   Offset: -273
+                                   Sensor Offset FC1: -1.980
+                                   Sensor Offset FC2: -1.980
+                                   
+                                   T_DCDC = DN * Gain + Offset + Sensor Offset
+                                            [deg C]
+                                   T_DCDC = DN * Gain + Offset + Sensor Offset
+                                            + 273.150 [Kelvin]
+                                   
+                                   Lower limit red: -40.0 deg C
+                                   Lower limit yellow: -35.0 deg C
+                                   Upper limit yellow: +70.0 deg C
+                                   Upper limit red: +80.0 deg C"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 999.999
+   MINIMUM                       = -999.999
+   MAXIMUM_LENGTH                = 8
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = K
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:T_DPU"
+   BL_NAME                       = DAWN_T_DPU
+   DESCRIPTION                   = "Name: HK-Tdpu
+                                   Location: DPU
+                                   H/K Sensor: DPU Board Thermistor
+                                   Sensor Type: AD590
+                                   Gain: 0.0373
+                                   Offset: -273
+                                   Sensor Offset FC1: -7.960
+                                   Sensor Offset FC2: -3.960
+                                   
+                                   T_DPU = DN * Gain + Offset + Sensor Offset
+                                           [deg C]
+                                   T_DPU = DN * Gain + Offset + Sensor Offset
+                                           + 273.150 [Kelvin]
+                                   
+                                   Lower limit red: -40.0 deg C
+                                   Lower limit yellow: -35.0 deg C
+                                   Upper limit yellow: +80.0 deg C
+                                   Upper limit red: +90.0 deg C"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 999.999
+   MINIMUM                       = -999.999
+   MAXIMUM_LENGTH                = 8
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = K
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:T_F12"
+   BL_NAME                       = DAWN_T_F12
+   DESCRIPTION                   = "Name: HK-Tpcu2
+                                   Location: PCU
+                                   H/K Sensor: PCU Board Thermistor 1
+                                   (PCU FEE 12 V I/F Thermistor)
+                                   Sensor Type: AD590
+                                   Gain: 0.0373
+                                   Offset: -273
+                                   Sensor Offset FC1: -2.580
+                                   Sensor Offset FC2: -2.580
+                                   
+                                   T_F12 = DN * Gain + Offset + Sensor Offset
+                                           [deg C]
+                                   T_F12 = DN * Gain + Offset + Sensor Offset
+                                           + 273.150 [Kelvin]
+                                   
+                                   Lower limit red: -40.0 deg C
+                                   Lower limit yellow: -35.0 deg C
+                                   Upper limit yellow: +70.0 deg C
+                                   Upper limit red: +80.0 deg C"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 999.999
+   MINIMUM                       = -999.999
+   MAXIMUM_LENGTH                = 8
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = K
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:T_FILTER_MOTOR"
+   BL_NAME                       = DAWN_T_FILTER_MOTOR
+   DESCRIPTION                   = "Name: TFM
+                                   Location: Filter Wheel
+                                   H/K Sensor: Filter Motor Thermistor
+                                   Sensor Type: AD590
+                                   Gain: 0.9975
+                                   Offset: -129.5
+                                   Sensor Offset FC1: -3.1 
+                                   Sensor Offset FC2: -2.1
+                                   
+                                   T_FILTER_MOTOR = DN * Gain + Offset
+                                   + Sensor Offset [deg C]
+                                   T_FILTER_MOTOR = DN * Gain + Offset\
+                                   + Sensor Offset + 273.150 [Kelvin]
+                                   
+                                   Lower limit red: -55.0 deg C
+                                   Lower limit yellow: -50.0 deg C
+                                   Upper limit yellow: +50.0 deg C
+                                   Upper limit red: +60.0 deg C"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 999.999
+   MINIMUM                       = -999.999
+   MAXIMUM_LENGTH                = 8
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = K
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:T_LENS_BARREL"
+   BL_NAME                       = DAWN_T_LENS_BARREL
+   DESCRIPTION                   = "Name: TLB
+                                   Location: Lens Barrel
+                                   H/K Sensor: Lens Barrel Thermistor
+                                   Sensor Type: AD590
+                                   Gain: 0.9975
+                                   Offset: -129.5
+                                   Sensor Offset FC1: -1.1 
+                                   Sensor Offset FC2: -1.1
+                                   
+                                   T_LENS_BARREL = DN * Gain + Offset
+                                   + Sensor Offset [deg C]
+                                   T_LENS_BARREL = DN * Gain + Offset
+                                   + Sensor Offset + 273.150 [Kelvin]
+                                   
+                                   Lower limit red: -55.0 deg C
+                                   Lower limit yellow: -50.0 deg C
+                                   Upper limit yellow: +40.0 deg C
+                                   Upper limit red: +45.0 deg C"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 999.999
+   MINIMUM                       = -999.999
+   MAXIMUM_LENGTH                = 8
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = K
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:T_RAD_MOTOR"
+   BL_NAME                       = DAWN_T_RAD_MOTOR
+   DESCRIPTION                   = "Name: TRD
+                                   Location: Radiator
+                                   H/K Sensor: Radiator Thermistor
+                                   Sensor Type: AD590
+                                   Gain: 0.9975
+                                   Offset: -129.5
+                                   Sensor Offset FC1: -1.1 
+                                   Sensor Offset FC2: -1.1
+                                   
+                                   T_RAD_MOTOR = DN * Gain + Offset
+                                   + Sensor Offset [deg C]
+                                   T_RAD_MOTOR = DN * Gain + Offset
+                                   + Sensor Offset + 273.150 [Kelvin]
+                                   
+                                   Lower limit red: -115.0 deg C
+                                   Lower limit yellow: -95.0 deg C
+                                   Upper limit yellow: +35.0 deg C
+                                   Upper limit red: +40.0 deg C
+                                   
+                                   Note: This is not a motor temperature!"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 999.999
+   MINIMUM                       = -999.999
+   MAXIMUM_LENGTH                = 8
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = K
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:T_STRUCTURE"
+   BL_NAME                       = DAWN_T_STRUCTURE
+   DESCRIPTION                   = "Name: TCS
+                                   Location: Camera Head
+                                   H/K Sensor: CH Structure Thermistor
+                                   Sensor Type: AD590
+                                   Gain: 0.9975
+                                   Offset: -129.5
+                                   Sensor Offset FC1: -3.1 
+                                   Sensor Offset FC2: -4.1
+                                   
+                                   T_STRUCTURE = DN * Gain + Offset
+                                   + Sensor Offset [deg C]
+                                   T_STRUCTURE = DN * Gain + Offset
+                                   + Sensor Offset + 273.150 [Kelvin]
+                                   
+                                   Lower limit red: -55.0 deg C
+                                   Lower limit yellow: -50.0 deg C
+                                   Upper limit yellow: +40.0 deg C
+                                   Upper limit red: +45.0 deg C"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 999.999
+   MINIMUM                       = -999.999
+   MAXIMUM_LENGTH                = 8
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = K
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:UDPLIB_SOFTWARE_VERSION"
+   BL_NAME                       = DAWN_UDPLIB_SOFTWARE_VERSION
+   DESCRIPTION                   = "Current version of the FC UDP library"
+   GENERAL_DATA_TYPE             = ALPHABET
+   MAXIMUM                       = "N/A"
+   MINIMUM                       = "N/A" 
+   MAXIMUM_LENGTH                = 7
+   MINIMUM_LENGTH                = 7
+   STANDARD_VALUE_TYPE           = TEXT
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = "N/A"
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-05
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:USE_PRE_CLEAR"
+   BL_NAME                       = DAWN_USE_PRE_CLEAR
+   DESCRIPTION                   = "OFF = No pre-clear of the CCD prior to an
+                                    image acquisition.
+                                    
+                                    ON = A pre-clear of the CCD, 193 ms prior to
+                                    an image acquisition, removes all charge
+                                    that is on the CCD at this moment"
+   GENERAL_DATA_TYPE             = ALPHABET
+   MAXIMUM                       = "N/A"
+   MINIMUM                       = "N/A"
+   MAXIMUM_LENGTH                = 3
+   MINIMUM_LENGTH                = 2
+   STANDARD_VALUE_TYPE           = DEFINITION
+   STANDARD_VALUE_SET            = {"OFF","ON"}
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = "N/A"
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-05
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = 
+
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:V_12"
+   BL_NAME                       = DAWN_V12
+   DESCRIPTION                   = "Name: V12FEE
+                                   Location: PCU
+                                   H/K Sensor: PCU Voltage Monitor
+                                   Sensor Type: Voltage Sensor
+                                   Gain: 0.0012
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   V_12 = DN * Gain + Offset + Sensor Offset
+                                          [V]
+                                  
+                                   Lower limit red: 11.0 V
+                                   Lower limit yellow: 11.7 V
+                                   Upper limit yellow: 12.5 V
+                                   Upper limit red: 13.0 V"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 9999.999
+   MINIMUM                       = -9999.999
+   MAXIMUM_LENGTH                = 9
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = V
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:V_16"
+   BL_NAME                       = DAWN_V_16
+   DESCRIPTION                   = "Name: V16V15
+                                   Location: PCU
+                                   H/K Sensor: PCU Voltage Monitor
+                                   Sensor Type: Voltage Sensor
+                                   Gain: 0.000165
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   V_16 = DN * Gain + Offset + Sensor Offset
+                                          [V]
+                                  
+                                   Lower limit red: 14.7 V
+                                   Lower limit yellow: 15.2 V
+                                   Upper limit yellow: 16.5 V
+                                   Upper limit red: 17.0 V"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 9999.999
+   MINIMUM                       = -9999.999
+   MAXIMUM_LENGTH                = 9
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = V
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:V_28"
+   BL_NAME                       = DAWN_V_28
+   DESCRIPTION                   = "Name: V28M
+                                   Location: PCU
+                                   H/K Sensor: Main +28V Voltage Monitor
+                                   Sensor Type: Voltage Sensor
+                                   Gain: 0.04
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   V_28 = DN * Gain + Offset + Sensor Offset
+                                          [V]
+                                  
+                                   Lower limit red: 20.0 V
+                                   Lower limit yellow: 21.5 V
+                                   Upper limit yellow: 35.5 V
+                                   Upper limit red: 37.0 V"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 9999.999
+   MINIMUM                       = -9999.999
+   MAXIMUM_LENGTH                = 9
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = V
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:V_2_5"
+   BL_NAME                       = DAWN_V_2_5
+   DESCRIPTION                   = "Name: V2.5AN
+                                   Location: PCU
+                                   H/K Sensor: PCU Voltage Monitor
+                                   Sensor Type: Voltage Sensor
+                                   Gain: 0.00025
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   V_2_5 = DN * Gain + Offset + Sensor Offset
+                                           [V]
+                                  
+                                   Lower limit red: 2.1 V
+                                   Lower limit yellow: 2.3 V
+                                   Upper limit yellow: 2.8 V
+                                   Upper limit red: 3.0 V"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 9999.999
+   MINIMUM                       = -9999.999
+   MAXIMUM_LENGTH                = 9
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = V
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:V_3_3"
+   BL_NAME                       = DAWN_V_3_3
+   DESCRIPTION                   = "Name: V3.3AN
+                                   Location: PCU
+                                   H/K Sensor: PCU Voltage Monitor
+                                   Sensor Type: Voltage Sensor
+                                   Gain: 0.00033
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   V_3_3 = DN * Gain + Offset + Sensor Offset
+                                           [V]
+                                  
+                                   Lower limit red: 3.0 V
+                                   Lower limit yellow: 3.2 V
+                                   Upper limit yellow: 3.7 V
+                                   Upper limit red: 3.9 V"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 9999.999
+   MINIMUM                       = -9999.999
+   MAXIMUM_LENGTH                = 9
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = V
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:V_5"
+   BL_NAME                       = DAWN_V_5
+   DESCRIPTION                   = "Name: V5FEE
+                                   Location: PCU
+                                   H/K Sensor: PCU Voltage Monitor
+                                   Sensor Type: Voltage Sensor
+                                   Gain: 0.00052
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   V_5 = DN * Gain + Offset + Sensor Offset [V]
+                                  
+                                   Lower limit red: 4.5 V
+                                   Lower limit yellow: 4.7 V
+                                   Upper limit yellow: 5.5 V
+                                   Upper limit red: 5.8 V"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 9999.999
+   MINIMUM                       = -9999.999
+   MAXIMUM_LENGTH                = 9
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = V
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:V_5_ANALOG"
+   BL_NAME                       = DAWN_V_5_ANALOG
+   DESCRIPTION                   = "Name: V5AN
+                                   Location: PCU
+                                   H/K Sensor: PCU Voltage Monitor
+                                   Sensor Type: Voltage Sensor
+                                   Gain: 0.00052
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   V_5_ANALOG = DN * Gain + Offset
+                                   + Sensor Offset [V]
+                                  
+                                   Lower limit red: 4.5 V
+                                   Lower limit yellow: 4.7 V
+                                   Upper limit yellow: 5.5 V
+                                   Upper limit red: 5.8 V"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 9999.999
+   MINIMUM                       = -9999.999
+   MAXIMUM_LENGTH                = 9
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = V
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:V_M5"
+   BL_NAME                       = DAWN_V_M5
+   DESCRIPTION                   = "Name: V-5FEE
+                                   Location: PCU
+                                   H/K Sensor: PCU Voltage Monitor
+                                   Sensor Type: Voltage Sensor
+                                   Gain: -0.0005
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   V_M5 = DN * Gain + Offset + Sensor Offset
+                                          [V]
+                                  
+                                   Lower limit red: -5.8 V
+                                   Lower limit yellow: -5.5 V
+                                   Upper limit yellow: -4.7 V
+                                   Upper limit red: -4.5 V"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 9999.999
+   MINIMUM                       = -9999.999
+   MAXIMUM_LENGTH                = 9
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = V
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+OBJECT                           = ELEMENT_DEFINITION
+   ELEMENT_NAME                  = "DAWN:V_M5_ANALOG"
+   BL_NAME                       = DAWN_V_M5_ANALOG
+   DESCRIPTION                   = "Name: V-5AN
+                                   Location: PCU
+                                   H/K Sensor: PCU Voltage Monitor
+                                   Sensor Type: Voltage Sensor
+                                   Gain: -0.0005
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   V_M5_ANALOG = DN * Gain + Offset
+                                   + Sensor Offset [V]
+                                  
+                                   Lower limit red: -5.8 V
+                                   Lower limit yellow: -5.5 V
+                                   Upper limit yellow: -4.7 V
+                                   Upper limit red: -4.5 V"
+   GENERAL_DATA_TYPE             = REAL
+   MAXIMUM                       = 9999.999
+   MINIMUM                       = -9999.999
+   MAXIMUM_LENGTH                = 9
+   MINIMUM_LENGTH                = 5
+   STANDARD_VALUE_TYPE           = RANGE
+   STANDARD_VALUE_SET            = "N/A"
+   STANDARD_VALUE_SET_DESC       = "N/A"
+   KEYWORD_DEFAULT_VALUE         = "N/A"
+   UNIT_ID                       = V
+   FORMATION_RULE_DESC           = "N/A"
+   SOURCE_NAME                   = "MPS/T.Maue"
+   CHANGE_DATE                   = 2009-05-04
+
+
+   SYSTEM_CLASSIFICATION_ID      = 
+   GENERAL_CLASSIFICATION_TYPE   = 
+   STATUS_TYPE                   = 
+   STANDARD_VALUE_OUTPUT_FLAG    = 
+   TEXT_FLAG                     = 
+   TERSE_NAME                    = 
+   SQL_FORMAT                    = 
+   BL_SQL_FORMAT                 = 
+   DISPLAY_FORMAT                = 
+   AVAILABLE_VALUE_TYPE          = 
+END_OBJECT                       = ELEMENT_DEFINITION
+
+OBJECT                            = ELEMENT_DEFINITION
+  ELEMENT_NAME                    = "dawn:alt_start_time"
+  BL_NAME                         = "dawn_strttme"
+  DESCRIPTION                     = "
+
+Same as global keyword START_TIME; allows one label to specify
+both YYYY-MM-DD and YYYY-DDD without using a list."
+
+  GENERAL_DATA_TYPE               = "TIME"
+  MAXIMUM                         = "N/A"
+  MINIMUM                         = "N/A"
+  MAXIMUM_LENGTH                  = "30"
+  MINIMUM_LENGTH                  = "N/A"
+  STANDARD_VALUE_TYPE             = "NONE"
+  STANDARD_VALUE_SET_DESC         = ""
+  KEYWORD_DEFAULT_VALUE           = ""
+  UNIT_ID                         = "none"
+  SOURCE_NAME                     = "NULL"
+  FORMATION_RULE_DESC             = ""
+  SYSTEM_CLASSIFICATION_ID        = "DAWN"
+  GENERAL_CLASSIFICATION_TYPE     = "MISSION"
+  CHANGE_DATE                     = "2012-09-12"
+  STATUS_TYPE                     = "APPROVED"
+  STANDARD_VALUE_OUTPUT_FLAG      = "N"
+  TEXT_FLAG                       = "N"
+  TERSE_NAME                      = "dawn_strttm"
+  SQL_FORMAT                      = "CHAR(30)"
+  BL_SQL_FORMAT                   = "char(30)"
+  DISPLAY_FORMAT                  = "DATETIME"
+  AVAILABLE_VALUE_TYPE            = "N"
+END_OBJECT                        = ELEMENT_DEFINITION
+
+OBJECT                            = ELEMENT_DEFINITION
+  ELEMENT_NAME                    = "dawn:alt_stop_time"
+  BL_NAME                         = "dawn_stoptm"
+  DESCRIPTION                     = "
+
+Same as global keyword STOP_TIME; allows one label to specify
+both YYYY-MM-DD and YYYY-DDD without using a list."
+
+  GENERAL_DATA_TYPE               = "TIME"
+  MAXIMUM                         = "N/A"
+  MINIMUM                         = "N/A"
+  MAXIMUM_LENGTH                  = "30"
+  MINIMUM_LENGTH                  = "N/A"
+  STANDARD_VALUE_TYPE             = "NONE"
+  STANDARD_VALUE_SET_DESC         = ""
+  KEYWORD_DEFAULT_VALUE           = ""
+  UNIT_ID                         = "none"
+  SOURCE_NAME                     = "NULL"
+  FORMATION_RULE_DESC             = ""
+  SYSTEM_CLASSIFICATION_ID        = "DAWN"
+  GENERAL_CLASSIFICATION_TYPE     = "MISSION"
+  CHANGE_DATE                     = "2012-09-12"
+  STATUS_TYPE                     = "APPROVED"
+  STANDARD_VALUE_OUTPUT_FLAG      = "N"
+  TEXT_FLAG                       = "N"
+  TERSE_NAME                      = "dawn_stoptm"
+  SQL_FORMAT                      = "CHAR(30)"
+  BL_SQL_FORMAT                   = "char(30)"
+  DISPLAY_FORMAT                  = "DATETIME"
+  AVAILABLE_VALUE_TYPE            = "N"
+END_OBJECT                        = ELEMENT_DEFINITION
+END

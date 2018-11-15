@@ -33,4 +33,4 @@ Steps to convert a PDS3 dictionary to PDS4 LDD
 	 
 4. Run [lddtool](https://pds.nasa.gov/pds4/software/ldd/) to generate LDD files
 
-     example: lddtool -pl myldd.xml
+     example: `lddtool -pl myldd.xml`

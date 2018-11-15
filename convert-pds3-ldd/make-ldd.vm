@@ -9,57 +9,152 @@
       http://pds.nasa.gov/pds4/pds/v1 
       file:////128.97.68.67/work1/pds4/pds/v1/PDS4_PDS_1400.xsd">
 
-   <name>$config.mission</name>
-   <ldd_version_id>$config.ldd_version</ldd_version_id>
-   <full_name>$config.full_name</full_name>
-   <steward_id>$config.steward</steward_id>
-   <namespace_id>$config.namespace</namespace_id>
-   <last_modification_date_time>$Date.getISO8601DateString($Date.getNow())</last_modification_date_time>
+	<name>$config.mission</name>
+	<ldd_version_id>$config.ldd_version</ldd_version_id>
+	<full_name>$config.full_name</full_name>
+	<steward_id>$config.steward</steward_id>
+	<namespace_id>$config.namespace</namespace_id>
+	<last_modification_date_time>$Date.getISO8601DateString($Date.getNow())</last_modification_date_time>
 
+    <!-- General attributes -->
+	<DD_Attribute>
+		<name>mission_phase_name</name>
+		<version_id>1.0</version_id>
+		<local_identifier>${config.namespace}.mission_phase_name</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>$config.submitter</submitter_name>
+		<definition>The mission_phase_name attribute provides the mission-defined 
+			   name of a mission phase.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+			<maximum_characters>255</maximum_characters>
+			<DD_Permissible_Value>
+				<value>Launch</value>
+				<value_meaning>2007-09-27T11:34</value_meaning>
+			</DD_Permissible_Value>   
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>spacecraft_clock_start_count</name>
+		<version_id>1.0</version_id>
+		<local_identifier>${config.namespace}.spacecraft_clock_start_count</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>$config.submitter</submitter_name>
+		<definition>The spacecraft_clock_start_count attribute provides the value 
+					   of the spacecraft clock at the beginning of a time period of 
+					   interest.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+			<pattern>[1-9]/[0-9]{9}(.[0-9]{3})?</pattern>
+			<!-- Some data sets don't have the partition and some have only 8 digits -->
+		</DD_Value_Domain>
+	</DD_Attribute>    
+	<DD_Attribute>
+		<name>spacecraft_clock_stop_count</name>
+		<version_id>1.0</version_id>
+		<local_identifier>${config.namespace}.spacecraft_clock_stop_count</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>$config.submitter</submitter_name>
+		<definition>The spacecraft_clock_stop_count attribute provides the value of the spacecraft 
+					   clock at the beginning of a time period of interest.
+		</definition>    
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+			<pattern>[1-9]/[0-9]{9}(.[0-9]{3})?</pattern>
+			<!-- See comment above -->
+		</DD_Value_Domain>
+	</DD_Attribute>       
+	<DD_Attribute>
+		<name>standard_data_product_id</name>
+		<version_id>1.0</version_id>
+		<local_identifier>${config.namespace}.standard_data_product_id</local_identifier>
+		<nillable_flag>true</nillable_flag>
+		<submitter_name>$config.submitter</submitter_name>
+		<definition>The standard_data_product_id keyword is used to identify
+					   data products of the same processing level that
+					   are not otherwise indentified by being in different
+					   collections within the bundle.</definition>    
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>     
+
+	<!-- Specific Attributes -->
 #foreach ($def in $label.ELEMENT_DEFINITION)   
-   <DD_Attribute>
-      <name>$Text.toLowerCase($def.NAME).split(":")[1]</name>
-      <version_id>$config.term_version</version_id>
-      <local_identifier>$Text.toLowerCase($def.NAME).replace(":", ".")</local_identifier>
-      <nillable_flag>false</nillable_flag>
-      <submitter_name>$config.submitter</submitter_name>
-      <definition>$def.DESCRIPTION</definition>
-      <DD_Value_Domain>
+	<DD_Attribute>
+		<object_name>$def.OBJECT_NAME</object_name>
+		<name>$Text.toLowerCase($def.ELEMENT_NAME).split(":")[1]</name>
+		<version_id>$config.term_version</version_id>
+		<local_identifier>$Text.toLowerCase($def.ELEMENT_NAME).replace(":", ".")</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>$config.submitter</submitter_name>
+		<definition>$def.DESCRIPTION</definition>
+		<DD_Value_Domain>
 #if($def.STANDARD_VALUE_SET != "N/A")
-         <enumeration_flag>true</enumeration_flag>
-         <value_data_type>$convert.get($def.GENERAL_DATA_TYPE)</value_data_type>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>$convert.get($def.GENERAL_DATA_TYPE)</value_data_type>
 #foreach ( $val in $def.STANDARD_VALUE_SET)
-		 <DD_Permissible_Value>
-			<value>$val</value>
-			<value_meaning></value_meaning>
-		 </DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>$val</value>
+				<value_meaning></value_meaning>
+			</DD_Permissible_Value>
 #end
 #else
-         <enumeration_flag>false</enumeration_flag>
-         <value_data_type>$convert.get($def.GENERAL_DATA_TYPE)</value_data_type>
-		 <minimum_value>$def.MINIMUM</minimum_value>
-		 <maximum_value>$def.MAXIMUM</maximum_value>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>$convert.get($def.GENERAL_DATA_TYPE)</value_data_type>
+			<minimum_value>$def.MINIMUM</minimum_value>
+			<maximum_value>$def.MAXIMUM</maximum_value>
 #end		
-      </DD_Value_Domain>
-   </DD_Attribute>
+		</DD_Value_Domain>
+	</DD_Attribute>
 #end
-   <DD_Class>
-      <name>$config.mission</name>
-      <version_id>$config.term_version</version_id>
-      <local_identifier>${config.namespace}.$config.mission</local_identifier>
-      <submitter_name>$config.submitter</submitter_name>
-      <definition>The ${config.mission} class is the container for ${config.mission} mission-specific metadata elements.
-	  </definition>
+	<DD_Class>
+		<name>$config.mission</name>
+		<version_id>$config.term_version</version_id>
+		<local_identifier>${config.namespace}.$config.mission</local_identifier>
+		<submitter_name>$config.submitter</submitter_name>
+		<definition>The ${config.mission} class is the container for ${config.mission} mission-specific metadata elements.
+		</definition>
 
-	  $label.ELEMENT_DEFINITION.getLength();
-	  
+	  <!-- so that this class has element definitions in the schema -->
+		<element_flag>true</element_flag>
+		<DD_Association>
+			<identifier_reference>${config.namespace}.mission_phase_name</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>*</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>${config.namespace}.spacecraft_clock_start_count</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>${config.namespace}.spacecraft_clock_stop_count</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>${config.namespace}.standard_data_product_id</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
 #foreach ($def in $label.ELEMENT_DEFINITION)   
-      <DD_Association>
-         <local_identifier>$Text.toLowerCase($def.NAME).replace(":", ".")</local_identifier>
-         <reference_type>attribute_of</reference_type>
-         <minimum_occurrences>0</minimum_occurrences>
-         <maximum_occurrences>1</maximum_occurrences>
-      </DD_Association>
+		<DD_Association>
+			<local_identifier>$Text.toLowerCase($def.ELEMENT_NAME).replace(":", ".")</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
 #end
 	</DD_Class>
 
