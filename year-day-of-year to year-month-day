@@ -1,0 +1,37 @@
+import os
+import time
+f0 = open('file_list.txt','r')
+for line in f0:
+   filename = line.rstrip('\n')
+   print filename
+   f1 = open(filename, 'r')
+   f2 = open('temp.txt', 'w')
+   for line in f1:
+     if '<start_date_time>' in line :
+       string1 = line.split(">")[1]
+       DOY = string1[:8]
+       rest = line.split("T")[1]
+       ttime = time.strptime(DOY, "%Y-%j")
+       YMD = time.strftime("%Y-%m-%d", ttime)
+       f2.write("       <start_date_time>"+YMD+"T"+rest)
+     elif '<stop_date_time>' in line :
+       string1 = line.split(">")[1]
+       DOY = string1[:8]
+       rest = line.split("T")[1]
+       ttime = time.strptime(DOY, "%Y-%j")
+       YMD = time.strftime("%Y-%m-%d", ttime)
+       f2.write("       <stop_date_time>"+YMD+"T"+rest)
+     elif '<creation_date_time>' in line :
+       string1 = line.split(">")[1]
+       DOY = string1[:8]
+       rest = line.split("T")[1]
+       ttime = time.strptime(DOY, "%Y-%j")
+       YMD = time.strftime("%Y-%m-%d", ttime)
+       f2.write("       <creation_date_time>"+YMD+"T"+rest)
+     else:
+       f2.write(line)
+   f1.close()
+   f2.close()
+   os.system("rm -f "+filename)
+   os.system("mv temp.txt "+filename)
+   os.system("unix2dos "+filename)
